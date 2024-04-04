@@ -1,2 +1,2 @@
 # CodeCache
-Local code base with examples, that is manipulated via a web-browser.
+Local code base with examples that can be managed through a web browser.
