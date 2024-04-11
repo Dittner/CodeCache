@@ -1,0 +1,426 @@
+:root {
+  --LineHeight: 1.6;
+  --font-family: -apple-system, "system-ui", "system-ui", "Segoe UI", sans-serif;
+  --font-family-mono: Menlo, source-code-pro, Monaco, 'Courier New', monospace;
+}
+
+@font-face {
+  font-family: 'ibm';
+  src: url('resources/fonts/ibm-plex-mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ibm {
+  font-family: 'ibm', var(--font-family-mono) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.def {
+  font-family: var(--font-family) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.mono {
+  font-family: var(--font-family-mono) !important;
+}
+
+* {
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: auto;
+  font-size: 18px;
+  line-height: var(--LineHeight);
+  justify-content: space-between;
+  font-family: var(--font-family) !important;
+  /*-webkit-font-smoothing: antialiased !important;*/
+  /*-moz-osx-font-smoothing: antialiased !important;*/
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /*add scroll track to all screens*/
+  /*overflow-y: scroll;*/
+  caret-shape: auto;
+}
+
+body, p, a, b, i, h1, h2, h3, h4, h5, h6, blockquote {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+::selection {
+  color: #111111;
+  background: #c7a0df;
+}
+
+.red {
+  color: red;
+}
+
+.notSelectable {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+hr {
+  opacity: 0;
+  height: 1.1rem;
+  margin: 0;
+}
+
+/*img {*/
+/*  image-rendering: pixelated;*/
+/*  image-rendering: -moz-crisp-edges;*/
+/*  image-rendering: crisp-edges;*/
+/*}*/
+
+/******************************/
+/*--------- LINK ---------*/
+/******************************/
+
+a:link, a:visited, a:active {
+  color: #27388C;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/******************************/
+/*--------- SCROLLBAR -----------*/
+/******************************/
+
+.listScrollbar {
+  display: block;
+  overflow: auto;
+}
+
+.listScrollbar::-webkit-scrollbar {
+  width: 14px;
+}
+
+.listScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.listScrollbar::-webkit-scrollbar-thumb {
+  background: #3d454988;
+  border-radius: 5px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.listScrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3d4549;
+  border-radius: 5px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.light.listScrollbar::-webkit-scrollbar-thumb {
+  background: #aaAAaa50;
+  border-radius: 5px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.light.listScrollbar::-webkit-scrollbar-thumb:hover {
+  background: #aaAAaa;
+  border-radius: 5px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: content-box;
+}
+
+
+/******************************/
+/*--------- LAYOUT -----------*/
+/******************************/
+
+div.appLayout.S {
+  background-color: #eff901;
+  z-index: 100;
+}
+
+div.appLayout.M {
+  background-color: #00d3f9;
+  z-index: 100;
+}
+
+div.appLayout.L {
+  background-color: #b700f9;
+  z-index: 100;
+}
+
+/******************************/
+/*--------- INPUTS ---------*/
+/******************************/
+
+input {
+  border-radius: unset;
+  outline: unset;
+  background: unset;
+  border: unset;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #151a1c88;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #151a1c88;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #151a1c88;
+}
+
+textarea {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: var(--CodeLineHeight);
+  min-height: 50px;
+  max-height: 85vh;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  resize: none;
+  outline: none;
+  overflow: visible;
+  overscroll-behavior: none;
+}
+
+/******************************/
+/*--------- LOADING ---------*/
+/******************************/
+
+.spinner {
+  height: 40px;
+  width: 40px;
+  pointer-events: none;
+}
+
+.smallSpinner {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spinner,
+  .smallSpinner {
+    animation: AppSpinnerAnimation infinite 1s linear;
+  }
+}
+
+@keyframes AppSpinnerAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/******************************/
+/*--------- BUTTON ---------*/
+/******************************/
+
+button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  border: none;
+  min-height: 25px;
+  background: none;
+  text-align: center;
+  text-decoration: none;
+  white-space: pre;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+#NoCSSBtn {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    min-width: 32px;
+  }
+}
+
+@font-face {
+  font-family: 'icons';
+  src: local("icons"), url("resources/fonts/icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  font-size: 1rem;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-film:before {
+  content: "\e915";
+  font-size: 5rem;
+}
+
+.icon-settings:before {
+  content: "\e911";
+}
+
+.icon-link:before {
+  font-size: 0.7rem;
+  content: "\e912";
+}
+
+.icon-back:before {
+  font-size: 0.7rem;
+  content: "\e913";
+}
+
+.icon-quote:before {
+  font-size: 1.5rem;
+  content: "\e914";
+}
+
+.icon-download:before {
+  content: "\e90e";
+}
+
+.icon-doc:before {
+  font-size: 0.7rem;
+  content: "\e90d";
+}
+
+.icon-moon:before {
+  font-size: 1.25rem;
+  content: "\e90b";
+}
+
+.icon-sun:before {
+  content: "\e90c";
+}
+
+.icon-down:before {
+  content: "\e901";
+}
+
+.icon-up:before {
+  content: "\e904";
+}
+
+.icon-scrollBack:before {
+  font-size: 1.1rem;
+  content: "\e908";
+}
+
+.icon-nextPage:before {
+  font-size: 0.9rem;
+  content: "\e909";
+}
+
+.icon-next:before {
+  font-size: 1rem;
+  content: "\e90f";
+}
+
+.icon-prev:before {
+  font-size: 1rem;
+  content: "\e910";
+}
+
+.icon-prevPage:before {
+  font-size: 0.9rem;
+  content: "\e90a";
+}
+
+.icon-close:before {
+  content: "\e907";
+}
+
+.icon-menu:before {
+  content: "\e905";
+}
+
+.icon-plus:before {
+  content: "\e906";
+}
+
+.icon-delete:before {
+  content: "\e900";
+}
+
+.icon-edit:before {
+  content: "\e902";
+}
+
+.icon-search:before {
+  content: "\e903";
+}
