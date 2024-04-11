@@ -5,7 +5,6 @@ import { LayoutLayer } from './global/application/Application'
 import { IconButton, TextButton } from './global/ui/common/Button'
 import { GlobalContext, observeApp } from './global/GlobalContext'
 import { observeThemeManager, themeManager } from './global/application/ThemeManager'
-import { TodoListView } from './TodoListView'
 import { observer } from 'react-observable-mutations'
 import { HStack, Label, VStack } from 'react-nocss'
 
@@ -33,7 +32,6 @@ export const App = observer(() => {
     <BrowserRouter>
       <Suspense>
         <Routes>
-          <Route path="/todo" element={<TodoListView/>}/>
           <Route path="/docs/*" element={<LazyDocsPage/>}/>
           <Route path="/" element={<LazyIntroPage/>}/>
           <Route path="*" element={<Navigate replace to="/"/>}/>
