@@ -5,6 +5,8 @@ CodeIndexClient/design
 /files
 /.pnp
 .pnp.js
+clientApp
+serverApp
 
 # testing
 /coverage

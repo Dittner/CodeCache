@@ -282,7 +282,7 @@ exc(2, 1, '+') //3, returned from cache
 const links = `## Much more info:
 * [React-Markdown](https://remarkjs.github.io/react-markdown/)
 * [Markdown basic syntax](https://www.markdownguide.org/basic-syntax/)
-* [Source Code (GitHub)](https://github.com/dittner/mondmonolith)`
+* [Source Code (GitHub)](https://github.com/dittner/CodeIndex)`
 
 interface MarkdownEditorProps {
   text: string
