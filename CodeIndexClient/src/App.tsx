@@ -23,6 +23,7 @@ export const useDocsContext = () => React.useContext(docsContext)
 
 export const LazyDocsPage = lazy(async() => await import('./docs/ui/DocsPage').then((module) => ({ default: module.DocsPage })))
 export const LazyIntroPage = lazy(async() => await import('./docs/ui/IntroPage').then((module) => ({ default: module.IntroPage })))
+export const LazyTextFormatterPage = lazy(async() => await import('./text/ui/FormatterPage').then((module) => ({ default: module.FormatterPage })))
 
 export const App = observer(() => {
   console.log('new App')
@@ -33,6 +34,7 @@ export const App = observer(() => {
       <Suspense>
         <Routes>
           <Route path="/docs/*" element={<LazyDocsPage/>}/>
+          <Route path="/formatter" element={<LazyTextFormatterPage/>}/>
           <Route path="/" element={<LazyIntroPage/>}/>
           <Route path="*" element={<Navigate replace to="/"/>}/>
         </Routes>

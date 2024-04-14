@@ -22,9 +22,9 @@ import { TextEditor } from '../../global/ui/common/Input'
 import { VSeparator } from '../../global/ui/common/Separator'
 import { observeApp } from '../../global/GlobalContext'
 import { themeManager } from '../../global/application/ThemeManager'
-import { IconButton, TextButton } from '../../global/ui/common/Button'
 import { useNavigate } from 'react-router-dom'
 import { HStack, Label, Spacer, VStack, stylable } from 'react-nocss'
+import { NavBar } from '../../global/ui/common/NavBar'
 
 function useWindowPosition(limit: number = -1): number {
   const [scrollPosition, setPosition] = useState(window.scrollY)
@@ -50,8 +50,6 @@ export const IntroPage = observer(() => {
   const SCROLL_POS_LIMIT = 600
   const scrollPosition = useWindowPosition(SCROLL_POS_LIMIT)
   console.log('new IntroPage, scrollPosition: ', scrollPosition)
-
-  const navigate = useNavigate()
 
   let headerFontSize = ''
   switch (app.size) {
@@ -83,46 +81,7 @@ export const IntroPage = observer(() => {
                  gap="0"
                  disableHorizontalScroll>
 
-    <HStack width='100%' height='40px' paddingHorizontal="10px" valign='center'
-            position='fixed' left='0' top='0'>
-      <IconButton icon={theme.isLight ? 'sun' : 'moon'} onClick={() => {
-        theme.isLight ? themeManager.setDarkTheme() : themeManager.setLightTheme()
-      }}/>
-
-      <Spacer/>
-
-      <TextButton title="Docs"
-                  onClick={() => {
-                    navigate('/docs')
-                  }}/>
-    </HStack>
-
-    {/*{app.size === AppSize.XS &&*/}
-    {/*  <Image src={theme.isDark ? '/headerBg.jpg' : '/headerBg-light.jpg'}*/}
-    {/*         preview={theme.isDark ? '/headerBg-preview.jpg' : '/headerBg-light-preview.jpg'}*/}
-    {/*         alt="header's background"*/}
-    {/*         top="0"*/}
-    {/*         width='900px'*/}
-    {/*         height='auto'*/}
-    {/*         disableScroll*/}
-    {/*         position='fixed'*/}
-    {/*         halign="center" valign="top"/>*/}
-
-    {/*}*/}
-
-    {/*{app.size !== AppSize.XS &&*/}
-    {/*  <Image src={theme.isDark ? '/headerBg.jpg' : '/headerBg-light.jpg'}*/}
-    {/*         preview={theme.isDark ? '/headerBg-preview.jpg' : '/headerBg-light-preview.jpg'}*/}
-    {/*         alt="header's background"*/}
-    {/*         width='2000px'*/}
-    {/*         height='auto'*/}
-    {/*         disableHorizontalScroll*/}
-    {/*         halign="center" valign="top"*/}
-    {/*         top="0"*/}
-    {/*         opacity={scrollPosition > SCROLL_POS_LIMIT ? theme.isDark ? '0.6' : '0.2' : '1'}*/}
-    {/*         animateAll='opacity 700ms'*/}
-    {/*         position='fixed'/>*/}
-    {/*}*/}
+    <NavBar showAllTabs/>
 
     <VStack width='100%' minHeight='100vh'
             halign='center' valign='center'
@@ -156,8 +115,6 @@ export const IntroPage = observer(() => {
              layer={LayoutLayer.ONE}/>
 
     </VStack>
-
-    {/*<Rectangle width='100%' height='1px' bgColor={theme.text50}/>*/}
 
     <VStack halign="stretch"
             valign="top"

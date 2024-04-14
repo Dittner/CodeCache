@@ -9,10 +9,9 @@ import { LayoutLayer } from '../../global/application/Application'
 import { observeEditTools, observeVM } from '../DocsContext'
 import { observe, observer } from 'react-observable-mutations'
 import { TextEditor } from '../../global/ui/common/Input'
-import { IconButton, TextButton } from '../../global/ui/common/Button'
-import { themeManager } from '../../global/application/ThemeManager'
-import { HStack, Label, Spacer, VStack } from 'react-nocss'
+import { HStack, Label, VStack } from 'react-nocss'
 import { buildClassName, type StylableComponentProps } from 'react-nocss'
+import { NavBar } from '../../global/ui/common/NavBar'
 
 export const DocsPage = observer(() => {
   console.log('new DocsPage')
@@ -24,7 +23,6 @@ export const DocsPage = observer(() => {
   } = useDocsContext()
   observe(restApi)
   useWindowSize()
-  const navigate = useNavigate()
 
   const editorWidth = 0.5 * window.innerWidth - theme.docListWidth - 8
   const bodyWidth = 0.5 * window.innerWidth - theme.topicListWidth - 8
@@ -64,19 +62,7 @@ $ python3 run_server.py`
                    valign="center"
                    gap='20px'
                    width="100%" height="100vh">
-      <HStack width='100%' height='40px' paddingHorizontal="10px" valign='center'
-              position='fixed' left='0' top='0'>
-        <IconButton icon={theme.isLight ? 'sun' : 'moon'} onClick={() => {
-          theme.isLight ? themeManager.setDarkTheme() : themeManager.setLightTheme()
-        }}/>
-
-        <Spacer/>
-
-        <TextButton title="Intro"
-                    onClick={() => {
-                      navigate('/')
-                    }}/>
-      </HStack>
+      <NavBar/>
 
       <Label text={title}
              textAlign='center'

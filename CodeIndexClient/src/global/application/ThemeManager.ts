@@ -187,7 +187,7 @@ export class ThemeManager extends Observable {
       header: '#cfdbe8',
       text: darkWhite,
       text50: darkWhite + '88',
-      inputText: '#a3d5ea',
+      inputText: '#a4c9d9',
       red: '#d05f68',
       gray: '#778594',
       border: '#ffFFff10',

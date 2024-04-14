@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { calcSpaceBefore, formatCode, formatIfTextIsCode, parseLang } from './String++'
 import { useWindowSize } from '../../../App'
 import * as React from 'react'
@@ -7,7 +7,7 @@ import {
   Label,
   TextInput,
   type TextInputProps,
-  VStack, buildClassName, type StylableComponentProps, TextAreaProps
+  VStack, buildClassName, type StylableComponentProps, type TextAreaProps
 } from 'react-nocss'
 
 /*
@@ -194,6 +194,10 @@ class TextEditorController {
         ta.setSelectionRange(0, 0)
       }
     }
+  }
+
+  static onKeyDown(e: any) {
+
   }
 }
 

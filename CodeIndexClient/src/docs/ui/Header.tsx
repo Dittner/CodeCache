@@ -121,7 +121,7 @@ export const HeaderView = observer(() => {
                 }}/>
       <Spacer width={theme.topicListWidth - 50 + 'px'}/>
 
-      <TextButton title="Intro"
+      <TextButton title="Home"
                   onClick={() => { navigate('/') }}/>
     </HStack>
   )

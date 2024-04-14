@@ -218,9 +218,8 @@ textarea {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 1rem;
-  line-height: var(--CodeLineHeight);
+  line-height: var(--LineHeight);
   min-height: 50px;
-  max-height: 85vh;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
