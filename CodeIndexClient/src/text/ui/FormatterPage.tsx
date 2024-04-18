@@ -34,15 +34,15 @@ export const FormatterPage = observer(() => {
     <Tools width='50%' height='100%'/>
 
     <TextArea protocol={vm.inputProtocol}
-              className='listScrollbar'
+              className='article listScrollbar'
               width='100%' maxWidth='900px' height='100%'
-              paddingTop="40px"
-              textColor={theme.inputText}
+              textColor={theme.text}
+              fontSize='1.2rem'
               caretColor={theme.isLight ? '#000000' : theme.red}
               bgColor={theme.appBg}
               borderRight={['1px', 'solid', theme.text + '20']}
               borderLeft={['1px', 'solid', theme.text + '20']}
-              paddingHorizontal="20px"
+              padding="20px"
               focusState={(state: StylableComponentProps) => {
                 state.bgColor = theme.text + '05'
               }}

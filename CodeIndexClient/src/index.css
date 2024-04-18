@@ -2,6 +2,7 @@
   --LineHeight: 1.6;
   --font-family: -apple-system, "system-ui", "system-ui", "Segoe UI", sans-serif;
   --font-family-mono: Menlo, source-code-pro, Monaco, 'Courier New', monospace;
+  --font-article: "Verdana Pro", "Georgia", -apple-system, "system-ui", "system-ui", "Segoe UI", sans-serif;
 }
 
 @font-face {
@@ -23,6 +24,11 @@
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
+.article {
+  font-family: var(--font-article) !important;
+}
+
 
 .mono {
   font-family: var(--font-family-mono) !important;

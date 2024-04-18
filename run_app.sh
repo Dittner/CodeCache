@@ -4,19 +4,19 @@
 
 dir=$(pwd)
 
-cat >clientApp <<EOF
+cat >serverApp <<EOF
 #!/bin/sh
 echo "1/2: Running server..."
 cd $dir && python3 run_server.py
 EOF
-chmod +x clientApp
+chmod +x serverApp
 
-cat >serverApp <<EOF
+cat >clientApp <<EOF
 #!/bin/sh
 echo "2/2: Running client..."
 cd "$dir"/CodeIndexClient && npm run client
 EOF
-chmod +x serverApp
+chmod +x clientApp
 
-open -a Terminal.app clientApp
 open -a Terminal.app serverApp
+open -a Terminal.app clientApp

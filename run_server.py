@@ -8,6 +8,7 @@ from flask import Flask, jsonify, request
 import os
 import json
 
+PORT_NUMBER = 5000
 ROOT_DIR = 'files'
 
 
@@ -161,6 +162,6 @@ def apply_caching(response):
 
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(debug=True, port=PORT_NUMBER)
   
 

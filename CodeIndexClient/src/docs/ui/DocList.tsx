@@ -278,25 +278,25 @@ const DocForm = stylable((props: DocFormProps) => {
   }
 
   return (
-      <HStack halign="left" valign="center"
-              padding='0'
-              paddingLeft="20px"
-              paddingRight="5px"
-              gap="3px"
-              width='100%'
-              height='30px'>
-        <Label className='icon-doc'
-               textColor={isDocSelected ? theme.docLinkSelected : theme.docLinkIcon}
-               paddingBottom='5px' opacity='0.75'/>
+    <HStack halign="left" valign="center"
+            padding='0'
+            paddingLeft="20px"
+            paddingRight="5px"
+            gap="3px"
+            width='100%'
+            height='30px'>
+      <Label className='icon-doc'
+             textColor={isDocSelected ? theme.docLinkSelected : theme.docLinkIcon}
+             paddingBottom='5px' opacity='0.75'/>
 
-        <InputForm type="text"
-                   paddingHorizontal='5px'
-                   height='30px'
-                   protocol={newDocTitleProtocol}
-                   onSubmitted={apply}
-                   onCanceled={cancel}
-                   autoFocus/>
-      </HStack>
+      <InputForm type="text"
+                 paddingHorizontal='5px'
+                 height='30px'
+                 protocol={newDocTitleProtocol}
+                 onSubmitted={apply}
+                 onCanceled={cancel}
+                 autoFocus/>
+    </HStack>
   )
 })
 
@@ -308,8 +308,6 @@ interface DirFormProps {
 
 const DirForm = stylable((props: DirFormProps) => {
   console.log('new DirEditForm')
-  const { theme } = useDocsContext()
-
   const [titleProtocol, _] = useState({ value: props.dir?.title ?? '' })
 
   const apply = () => {
@@ -322,28 +320,12 @@ const DirForm = stylable((props: DirFormProps) => {
     props.onCancel()
   }
 
-  return (
-    <VStack halign="stretch"
-            valign="center"
-            paddingTop='11px'
-            paddingHorizontal='10px'
-            borderColor={theme.border}
-            gap="0">
-
-      <InputForm type="text"
-                 protocol={titleProtocol}
-                 title="Directory"
-                 onSubmitted={apply}
-                 autoFocus
-      />
-
-      <HStack halign="center" valign="center" gap="50px">
-        <TextButton title="Cancel"
-                    onClick={cancel}/>
-
-        <TextButton title="Save"
-                    onClick={apply}/>
-      </HStack>
-    </VStack>
-  )
+  return <InputForm type="text"
+                    paddingHorizontal='5px'
+                    height='30px'
+                    protocol={titleProtocol}
+                    onSubmitted={apply}
+                    onCanceled={cancel}
+                    autoFocus
+  />
 })

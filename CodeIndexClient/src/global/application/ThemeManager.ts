@@ -178,7 +178,7 @@ export class ThemeManager extends Observable {
   * */
 
   createDarkTheme(t: GlobalTheme): GlobalTheme {
-    const darkWhite = '#bcc9d3' //abc3d0
+    const darkWhite = '#b2bcc4' //abc3d0
     const blue = '#569cee'
     return Object.assign({}, t, {
       id: 'dark',

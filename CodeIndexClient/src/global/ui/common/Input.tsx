@@ -36,7 +36,7 @@ const defInputFormProps = (theme: GlobalTheme): any => {
     autoCorrect: 'off',
     autoComplete: 'off',
     border: 'none',
-    borderBottom: ['1px', 'solid', theme.text50],
+    borderBottom: ['1px', 'solid', theme.violet + '50'],
     focusState: (state: StylableComponentProps) => {
       state.bgColor = theme.violet + '20'
     }
