@@ -26,7 +26,8 @@ export const HeaderView = observer(() => {
   const vm = observeVM()
   const dirList = observeDirList()
   const {
-    theme, repo
+    theme,
+    repo
   } = useDocsContext()
   observe(repo)
 
@@ -71,40 +72,37 @@ export const HeaderView = observer(() => {
         theme.isLight ? themeManager.setDarkTheme() : themeManager.setLightTheme()
       }}/>
 
+      <TextButton title="Add Dir"
+                  width='80px'
+                  visible={editTools.editMode}
+                  onClick={createDir}/>
+
+      <Spacer width={editTools.editMode ? '100px' : '180px'}/>
+      <SearchInput protocol={filterProtocol} onSubmitted={startSearching}/>
+      <Spacer/>
+
+      <RedButton title="Save"
+                 right={(window.innerWidth - 150 - 6 >> 1) + 'px'}
+                 position='absolute' top='0'
+                 paddingHorizontal='50px'
+                 width='150px' height='40px' padding='0'
+                 popUp='Save Changes (Ctrl + Shift + S)'
+                 visible={repo.isStorePending}
+                 disabled={!repo.isStorePending}
+                 onClick={saveChanges}/>
+
       {doc && editTools.editMode &&
         <>
-          <TextButton title="Add Dir"
-                      onClick={createDir}/>
-
-          <RedButton title="Save"
-                     left={theme.docListWidth + 'px'}
-                     position='absolute' top='2px'
-                     height='35px' padding='0'
-                     paddingHorizontal='50px'
-                     popUp='Save Changes (Ctrl + Shift + S)'
-                     visible={repo.isStorePending}
-                     disabled={!repo.isStorePending}
-                     onClick={saveChanges}/>
-
-          <Spacer width={(window.innerWidth / 2 - 120) + 'px'}/>
-
           <TextButton title="Add Page"
                       onClick={createPage}/>
 
           <Spacer width="10px"/>
 
           <ToolsPanel/>
+
+          <Spacer width="100px"/>
         </>
       }
-
-      {doc && !editTools.editMode &&
-        <>
-          <Spacer width='180px'/>
-          <SearchInput protocol={filterProtocol} onSubmitted={startSearching}/>
-        </>
-      }
-
-      <Spacer/>
 
       <Label whiteSpace="pre"
              visible={app.size !== AppSize.XS}
@@ -122,7 +120,9 @@ export const HeaderView = observer(() => {
       <Spacer width={theme.topicListWidth - 50 + 'px'}/>
 
       <TextButton title="Home"
-                  onClick={() => { navigate('/') }}/>
+                  onClick={() => {
+                    navigate('/')
+                  }}/>
     </HStack>
   )
 })

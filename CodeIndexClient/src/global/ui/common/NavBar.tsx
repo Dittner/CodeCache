@@ -1,4 +1,4 @@
-import { HStack, Spacer, VStack } from 'react-nocss'
+import { HStack, Spacer } from 'react-nocss'
 import { themeManager } from '../../application/ThemeManager'
 import { useNavigate } from 'react-router-dom'
 import { IconButton, TextButton } from './Button'

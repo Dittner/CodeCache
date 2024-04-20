@@ -170,13 +170,14 @@ const PageBlockEditor = observer((props: StylableComponentProps) => {
   return <div id={props.id}
               key={props.keyValue}
               className={className}>
-    <TextEditor protocol={editTools.inputProtocol}
-                width='100%' height='100%' minHeight='100%'
-                className="mono"
-                paddingHorizontal="20px"
-                paddingTop="10px"
-                onApply={apply}
-                onCancel={cancel}
-                autoFocus/>
+      <TextEditor protocol={editTools.inputProtocol}
+                  disabled={!editTools.selectedBlock && !editTools.selectedPage}
+                  width='100%' height='100%' minHeight='100%'
+                  className="mono"
+                  paddingHorizontal="20px"
+                  paddingTop="10px"
+                  onApply={apply}
+                  onCancel={cancel}
+                  autoFocus/>
   </div>
 })

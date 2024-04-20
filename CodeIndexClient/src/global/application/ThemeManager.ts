@@ -194,6 +194,8 @@ export class ThemeManager extends Observable {
       blue,
       green: '#8bbbd0',
       violet: '#6b4f9d',
+      pink: '#be53d2',
+      purple: '#8a68dc',
       //docs
       modalViewBg: '#43354b',
       codePanelBg: '#eff0fb07',
@@ -302,7 +304,6 @@ export class ThemeManager extends Observable {
     }, parentSelector, 'mark')
 
     const linkProps: StylableComponentProps = {
-      fontFamily: monoFont,
       fontSize: t.defFontSize,
       fontWeight: t.defFontWeight,
       textColor: t.blue

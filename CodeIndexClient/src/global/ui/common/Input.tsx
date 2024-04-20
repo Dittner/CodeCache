@@ -309,6 +309,10 @@ export const TextEditor = (props: TextEditorProps) => {
 
   const className = 'className' in props ? props.className + ' ' + buildClassName(customProps) : buildClassName(customProps)
 
+  if (props.disabled) {
+    return <div className={className}/>
+  }
+
   return <textarea className={className + ' listScrollbar'}
                    value={value}
                    autoFocus={customProps.autoFocus}
