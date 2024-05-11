@@ -17,7 +17,7 @@ export class RenameDocCmd implements RestApiCmd {
   run() {
     if (!this.doc.isStoring) {
       this.doc.isStoring = true
-      this.store()
+      this.store().then()
     }
   }
 

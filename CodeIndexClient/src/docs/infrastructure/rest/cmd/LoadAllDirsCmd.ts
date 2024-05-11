@@ -16,7 +16,7 @@ export class LoadAllDirsCmd implements RestApiCmd {
     if (this.dirList.loadStatus === LoadStatus.PENDING) {
       this.dirList.loadStatus = LoadStatus.LOADING
       console.log('LoadAllDirsCmd running')
-      this.loadDirs()
+      this.loadDirs().then()
     }
   }
 
