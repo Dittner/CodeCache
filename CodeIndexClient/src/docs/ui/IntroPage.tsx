@@ -22,7 +22,6 @@ import { TextEditor } from '../../global/ui/common/Input'
 import { VSeparator } from '../../global/ui/common/Separator'
 import { observeApp } from '../../global/GlobalContext'
 import { themeManager } from '../../global/application/ThemeManager'
-import { useNavigate } from 'react-router-dom'
 import { HStack, Label, Spacer, VStack, stylable } from 'react-nocss'
 import { NavBar } from '../../global/ui/common/NavBar'
 

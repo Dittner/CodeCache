@@ -16,7 +16,7 @@ export class LoadDocPagesCmd implements RestApiCmd {
     if (this.doc.loadStatus === DocLoadStatus.HEADER_LOADED && !this.doc.isNew) {
       this.doc.loadStatus = DocLoadStatus.LOADING
       console.log('LoadDocPagesCmd running')
-      this.loadDocPages()
+      this.loadDocPages().then()
     }
   }
 
